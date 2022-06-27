@@ -1,0 +1,57 @@
+/* ------------------- */
+/* RESET               */
+/* ------------------- */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* Set Up the Body */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Make Images Easier to Work With */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make Form Elements Easier to Work With */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove Animations for People Who've Turned Them Off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

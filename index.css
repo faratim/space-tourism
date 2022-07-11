@@ -1,5 +1,5 @@
 /* ------------------- */
-/* CUSTOM PROPERTIES   */
+/* Custom properties   */
 /* ------------------- */
 
 :root {
@@ -25,24 +25,25 @@
 }
 
 /* ------------------- */
-/* RESET               */
+/* Reset               */
 /* ------------------- */
 
-/* Box Sizing */
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Reset Margins */
+/* Reset margins */
 body,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
 p,
 figure,
 picture {
@@ -59,7 +60,7 @@ p {
   font-weight: 400;
 }
 
-/* Set Up the Body */
+/* set up the body */
 body {
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
@@ -69,14 +70,14 @@ body {
   min-height: 100vh;
 }
 
-/* Make Images Easier to Work With */
+/* make images easier to work with */
 img,
-picture {
+picutre {
   max-width: 100%;
   display: block;
 }
 
-/* Make Form Elements Easier to Work With */
+/* make form elements easier to work with */
 input,
 button,
 textarea,
@@ -84,7 +85,7 @@ select {
   font: inherit;
 }
 
-/* Remove Animations for People Who've Turned Them Off */
+/* remove animations for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -97,10 +98,10 @@ select {
 }
 
 /* ------------------- */
-/* UTILITY CLASSES     */
+/* Utility classes     */
 /* ------------------- */
 
-/* General */
+/* general */
 
 .flex {
   display: flex;
@@ -134,7 +135,8 @@ select {
   border: 0;
 }
 
-/* Colors */
+/* colors */
+
 .bg-dark {
   background-color: hsl(var(--clr-dark));
 }
@@ -155,7 +157,8 @@ select {
   color: hsl(var(--clr-white));
 }
 
-/* Typography */
+/* typography */
+
 .ff-serif {
   font-family: var(--ff-serif);
 }
@@ -226,13 +229,13 @@ select {
 }
 
 /* ------------------- */
-/* COMPONENTS          */
+/* Compontents         */
 /* ------------------- */
 
 .large-button {
   position: relative;
-  display: grid;
   z-index: 1;
+  display: grid;
   place-items: center;
   padding: 0 2em;
   border-radius: 50%;
@@ -246,7 +249,7 @@ select {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: hsl(var(--clr-white) / 0.15);
+  background: hsl(var(--clr-white) / 0.1);
   border-radius: 50%;
   opacity: 0;
   transition: opacity 500ms linear, transform 750ms ease-in-out;
@@ -256,4 +259,35 @@ select {
 .large-button:focus::after {
   opacity: 1;
   transform: scale(1.5);
+}
+
+.primary-navigation {
+  --gap: 8rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.underline-indicators > * {
+  padding: var(--underline-gap, 1rem) 0;
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: hsl(var(--clr-white) / 0.25);
+}
+
+.underline-indicators > .active {
+  border-color: hsl(var(--clr-white) / 1);
 }

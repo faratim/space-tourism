@@ -133,6 +133,10 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.d-block {
+    display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 }
@@ -144,11 +148,19 @@ select {
 }
 
 .grid-container {
+    text-align: center;
     display: grid;
+    place-items: center;
+    padding-inline: 1rem;
+}
+
+.grid-container * {
+    max-width: 50ch;
 }
 
 @media (min-width: 45em) {
     .grid-container {
+        text-align: left;
         column-gap: var(--container-gap, 2rem);
         grid-template-columns: minmax(2em, 1fr) minmax(0, 40rem) minmax(0, 40rem) minmax(2em, 1fr);
     }
@@ -159,6 +171,11 @@ select {
 
     .grid-container > *:last-child {
         grid-column: 3;
+    }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
     }
 }
 
@@ -272,6 +289,7 @@ select {
 /* ------------------- */
 
 .large-button {
+    font-size: 2rem;
     position: relative;
     z-index: 1;
     display: inline-grid;
@@ -392,4 +410,32 @@ select {
 .number-indicators > [aria-selected='true'] {
     background-color: hsl(var(--clr-white) / 1);
     color: hsl(var(--clr-dark));
+}
+
+/* ------------------- */
+/* PAGE SPECIFIC BGs   */
+/* ------------------- */
+
+body {
+    background-position: bottom center;
+    background-size: cover;
+}
+
+/* Home */
+
+.home {
+    background-image: url(./assets/home/background-home-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+    .home {
+        background-position: center center;
+        background-image: url(./assets/home/background-home-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .home {
+        background-image: url(./assets/home/background-home-desktop.jpg);
+    }
 }

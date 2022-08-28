@@ -4,13 +4,15 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <!-- FAVICON -->
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
-        <!-- Google fonts -->
+
+        <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="stylesheet" />
 
-        <!-- Our custom CSS -->
+        <!-- OUR CUSTOM CSS -->
         <link rel="stylesheet" href="index.css" />
         <title>Meet the Crew</title>
         <script src="navigation.js" defer></script>
@@ -19,6 +21,8 @@
 
     <body class="crew">
         <a class="skip-to-content" href="#main">Skip to content</a>
+
+        <!-- HEADER/NAVBAR -->
         <header class="primary-header flex">
             <div>
                 <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo" />
@@ -42,9 +46,11 @@
             </nav>
         </header>
 
+        <!-- MAIN CONTENT -->
         <main id="main" class="grid-container grid-container--crew flow">
             <h1 class="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
 
+            <!-- Dot Indicators -->
             <div class="dot-indicators flex" role="tablist" aria-label="crew member list">
                 <button aria-selected="true" aria-controls="commander-tab" role="tab" data-image="commander-image" tabindex="0">
                     <span class="sr-only">The commander</span>
@@ -58,7 +64,7 @@
                 </button>
             </div>
 
-            <!-- commander -->
+            <!-- Commander -->
             <article class="crew-details flow" id="commander-tab" role="tabpanel" tabindex="0">
                 <header class="flow flow--space-small">
                     <h2 class="fs-600 ff-serif uppercase">Commander</h2>
@@ -70,7 +76,7 @@
                 </p>
             </article>
 
-            <!-- mission specialist -->
+            <!-- Mission Specialist -->
             <article hidden class="crew-details flow" id="mission-tab" role="tabpanel" tabindex="0">
                 <header class="flow flow--space-small">
                     <h2 class="fs-600 ff-serif uppercase">Mission Specialist</h2>
@@ -82,7 +88,7 @@
                 </p>
             </article>
 
-            <!-- pilot -->
+            <!-- Pilot -->
             <article hidden class="crew-details flow" id="pilot-tab" role="tabpanel" tabindex="0">
                 <header class="flow flow--space-small">
                     <h2 class="fs-600 ff-serif uppercase">Pilot</h2>
@@ -94,7 +100,7 @@
                 </p>
             </article>
 
-            <!-- engineer -->
+            <!-- Engineer -->
             <article hidden class="crew-details flow" id="crew-tab" role="tabpanel" tabindex="0">
                 <header class="flow flow--space-small">
                     <h2 class="fs-600 ff-serif uppercase">Flight Engineer</h2>
@@ -106,6 +112,7 @@
                 </p>
             </article>
 
+            <!-- Crew Images -->
             <picture id="commander-image">
                 <source srcset="assets/crew/image-douglas-hurley.webp" type="image/webp" />
                 <img src="assets/crew/image-douglas-hurley.png" alt="Douglas Hurley" />
